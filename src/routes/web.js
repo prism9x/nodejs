@@ -1,13 +1,14 @@
 //import lib
 const express = require('express')
 const router = express.Router()
+const {
+    getHomepage,
+    getPrism9x
+} = require('../controllers/homeController')
 
-router.get('/', (req, res) => {
-    res.send('Prism9x - Hello World!')
-})
 
-router.get('/prism9x', (req, res) => {
-    res.render('sample.ejs')
-})
+
+router.get('/', getHomepage)
+router.get('/prism9x', getPrism9x)
 
 module.exports = router
